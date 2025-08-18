@@ -13,5 +13,5 @@ Welcome to the 42's common core's docker project, Inception!
 
 The goal of this project is to learn how to make dockerfiles and how to use docker compose. Here is a project with 3 containers : nginx, mariadb and wordpress/php.
 
-_Common Core Rank 05 - Completed in August 2025_
+_Common Core Rank 05 - Completed in August 2025_  
 _Code by me_
