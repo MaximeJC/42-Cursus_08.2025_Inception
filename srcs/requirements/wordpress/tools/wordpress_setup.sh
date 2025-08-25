@@ -79,4 +79,4 @@ fi
 # --- Step 5: Start PHP-FPM ---
 echo "SCRIPT END: Handing over to PHP-FPM..."
 # Start PHP-FPM in foreground to keep the container alive
-exec /usr/sbin/php-fpm7.4 -F
+exec /usr/sbin/php-fpm8.3 -F
