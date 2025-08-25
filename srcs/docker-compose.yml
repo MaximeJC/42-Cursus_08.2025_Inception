@@ -1,0 +1,15 @@
+volumes:
+  mariadb_data:
+    driver_opts:
+      type: none
+      device: /home/maxime/data/mariadb
+      o: bind
+  wordpress_files:
+    driver_opts:
+      type: none
+      device: /home/maxime/data/wordpress
+      o: bind
+
+networks:
+  inception_network:
+    driver: bridge
