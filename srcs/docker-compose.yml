@@ -12,6 +12,21 @@ services:
       - inception_network
     restart: unless-stopped
 
+  wordpress:
+    container_name: wordpress
+    build:
+      context: ./requirements/wordpress
+      dockerfile: Dockerfile
+    image: inception-wordpress
+    env_file: ./.env
+    depends_on:
+      - mariadb
+    volumes:
+      - wordpress_files:/var/www/html
+    networks:
+      - inception_network
+    restart: unless-stopped
+
   nginx:
     container_name: nginx
     build:
