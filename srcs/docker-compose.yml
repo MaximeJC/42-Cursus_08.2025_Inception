@@ -1,3 +1,16 @@
+services:
+  mariadb:
+    container_name: mariadb
+    build:
+      context: ./requirements/mariadb
+      dockerfile: Dockerfile
+    image: inception-mariadb
+    env_file: ./.env
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    networks:
+      - inception_network
+    restart: unless-stopped
 volumes:
   mariadb_data:
     driver_opts:
