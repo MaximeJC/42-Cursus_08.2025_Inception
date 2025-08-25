@@ -11,6 +11,24 @@ services:
     networks:
       - inception_network
     restart: unless-stopped
+
+  nginx:
+    container_name: nginx
+    build:
+      context: ./requirements/nginx
+      dockerfile: Dockerfile
+    image: inception-nginx
+    env_file: ./.env
+    depends_on:
+      - wordpress
+    ports:
+      - "443:443"
+    volumes:
+      - wordpress_files:/var/www/html:ro
+    networks:
+      - inception_network
+    restart: unless-stopped
+
 volumes:
   mariadb_data:
     driver_opts:
